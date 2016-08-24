@@ -1,14 +1,14 @@
 # Quick Reference
-username: pi
-password: On the general channel topic on Slack
-Slack: pongbot.slack.com
+- username: pi
+- password: On the general channel topic on Slack
+- Slack: pongbot.slack.com
 
 ## Pi Info
-Raspberry Pi 3 running Raspian Linux
-Camera Module NOIR v2
-Node Version Manager with Node.js installed
-Python 2.7
-OpenCV 2.4.9
+- Raspberry Pi 3 running Raspian Linux
+- Camera Module NOIR v2
+- Node Version Manager with Node.js installed
+- Python 2.7
+- OpenCV 2.4.9
 
 # SSH
 `ssh pi@ipaddress`
