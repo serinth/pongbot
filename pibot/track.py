@@ -1,3 +1,4 @@
+# Code reference originally from http://www.pyimagesearch.com/2015/09/14/ball-tracking-with-opencv/
 # import the necessary packages
 from collections import deque
 from picamera.array import PiRGBArray
