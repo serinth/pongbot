@@ -40,9 +40,19 @@ To get a video stream:
 The top level of this structure is using [serverless framework](http://serverless.com/). Install using `npm install -g serverless@beta`.
 The bot will be attached as a custom command integration on the Slack channel.
 
+## Deploy Entire Solution
+
+`npm install`
+`npm run build`
+`serverless deploy`
+
+## Deploy Function
+
+`serverless deploy function --function (your function name)`
+
 # Develop Locally
 
-Create all vision programs using the same python version and OpenCV version as the Pi. 
+Create all vision programs using the same python version and OpenCV version as the Pi.
 The only thing that you will need to change is the camera initialization function from your webcam to the `PiCamera` python class.
 See the `track.py` for examples.
 

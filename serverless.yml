@@ -31,7 +31,7 @@ defaults:
 
 functions:
   challenge:
-    handler: handler.challenge
+    handler: lib/challenge_cmd.challenge
     memorySize: 128
     events:
       - http:

@@ -1,0 +1,25 @@
+{
+  "name": "pongbot",
+  "version": "1.0.0",
+  "description": "Bot framework for Slack",
+  "main": "",
+  "scripts": {
+    "build": "node ./node_modules/babel-cli/bin/babel.js src --out-dir lib --ignore *.spec.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/serinth/pongbot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/serinth/pongbot/issues"
+  },
+  "homepage": "https://github.com/serinth/pongbot#readme",
+  "devDependencies": {
+    "babel-cli": "^6.14.0",
+    "babel-preset-es2015": "^6.14.0"
+  }
+}
