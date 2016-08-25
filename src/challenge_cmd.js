@@ -1,9 +1,9 @@
 'use strict';
-//import httpPost from './util/http';
+import httpPost from './util/http';
 
 module.exports.challenge = (event, context, cb) => {
 
-  const token = 'MB3B83dh99Qqvkk5qhzowyxr';
+  const token = '';
   const data=event.data;
   const challenger = `<@${data.user_name}>`;
   const opponent = `<${data.text}>`;
