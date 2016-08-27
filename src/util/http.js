@@ -1,25 +1,15 @@
-import https from 'https';
+import rp from 'request-promise';
 
-module.exports.httpPost = (path, postData) => {
+export default (path, postData) => {
+
+  const uri = `https://hooks.slack.com${path}`;
   const options = {
-    host: 'hooks.slack.com',
-    method: 'POST',
-    path: path,
-    headers: {
-      'Content-Type': 'application/json',
-      'Content-Length': postData.length
-    }
+      method: 'POST',
+      uri: uri,
+      body: postData,
+      json: true
   };
 
-  const promise = new Promise((resolve,error) => {
-    const req = https.request(options, (res) => {
-      res.on('error', (err) => reject(err));
-      res.on('end', () => resolve());
-      req.on('error', (err) => reject(err));
-      req.write(postData);
-      req.end();
-    });
-  });
+  return rp(options);
 
-  return promise;
 }

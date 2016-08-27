@@ -1,5 +1,12 @@
 {
-  "key3": "value3",
-  "key2": "value2",
-  "key1": "value1"
+  token: 'SAMPLETOKEN',
+  team_id: 'ID',
+  team_domain: 'pongbot',
+  channel_id: 'C249MSRMF',
+  channel_name: 'general',
+  user_id: 'UxxxW',
+  user_name: 'ttruong',
+  command: '/challenge',
+  text: '@gwittchen',
+  response_url: 'https://url.com/commands/ASDF'
 }

@@ -22,17 +22,24 @@ defaults:
   region: us-east-1
 
 # you can add packaging information here
-#package:
-#  include:
-#    - include-me.js
-#  exclude:
-#    - exclude-me.js
+package:
+  include:
+    - lib
+  exclude:
+    - README.md
+    - bodymappings.md
+    - package.json
+    - .babelrc
+    - pibot
+    - src
+    - node_modules # exclude the top level node_modules
 #  artifact: my-service-code.zip
 
 functions:
   challenge:
     handler: lib/challenge_cmd.challenge
     memorySize: 128
+    timeout: 15
     events:
       - http:
           path: challenge
