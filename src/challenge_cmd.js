@@ -12,7 +12,7 @@ module.exports.challenge = (event, context, cb) => {
   console.log(data);
 
   if(data.token !== token){
-    cb("Invalid Token",err);
+    cb("Invalid Token");
   }
 
   const path = data.response_url.replace('https://hooks.slack.com','');
