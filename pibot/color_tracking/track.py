@@ -29,12 +29,6 @@ args = vars(ap.parse_args())
 #colorLowerRange = (0, 0, 255)
 #colorUpperRange = (255,sensitivity,255)
 
-# HSV values need to divide by 2 for openCV to fit in uShort
-# H = Color in 360 degrees
-# S = Saturation (how gray it looks)
-# V = How bright it is
-
-#Green ranges below
 colorLowerRange = (45,100,0)
 colorUpperRange = (70,255,255)
 
