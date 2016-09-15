@@ -43,7 +43,7 @@ if not args.get("video", False):
 else:
 	camera = cv2.VideoCapture(args["video"])
 
-ball_start_time = 0
+ball_start_time = time.time()
 
 # keep looping
 for frame in camera.capture_continuous(rawCapture, format="bgr", use_video_port=True):
