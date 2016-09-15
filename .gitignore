@@ -39,3 +39,10 @@ jspm_packages
 
 # transpiled output
 lib
+
+# ignore slack config and ssl certificates
+config.json
+ssl
+
+# webstorm ignore
+.idea
