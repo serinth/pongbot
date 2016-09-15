@@ -18,19 +18,13 @@ ap.add_argument("-b", "--buffer", type=int, default=256,
 args = vars(ap.parse_args())
 
 
-
 # define the lower and upper boundaries of the color
 # ball in the HSV color space, then initialize the
 # list of tracked points
 
-
-#white range
-#sensitivity = 15
-#colorLowerRange = (0, 0, 255)
-#colorUpperRange = (255,sensitivity,255)
-
-colorLowerRange = (45,100,0)
-colorUpperRange = (70,255,255)
+#Yellow ball
+colorLowerRange = (23,150,0)
+colorUpperRange = (30,255,255)
 
 pts = deque(maxlen=args["buffer"])
  
@@ -49,10 +43,12 @@ if not args.get("video", False):
 else:
 	camera = cv2.VideoCapture(args["video"])
 
-
+ball_start_time = 0
 
 # keep looping
 for frame in camera.capture_continuous(rawCapture, format="bgr", use_video_port=True):
+
+
 	# grab the current frame
 	image = frame.array
  
@@ -83,6 +79,11 @@ for frame in camera.capture_continuous(rawCapture, format="bgr", use_video_port=
  
 	# only proceed if at least one contour was found
 	if len(cnts) > 0:
+
+		# Set a timer for how long we haven't detected the ball
+		ball_start_time = time.time()
+
+
 		# find the largest contour in the mask, then use
 		# it to compute the minimum enclosing circle and
 		# centroid
@@ -120,8 +121,19 @@ for frame in camera.capture_continuous(rawCapture, format="bgr", use_video_port=
  
 	# if the 'q' key is pressed, stop the loop
 	if key == ord("q"):
+		print("Exiting")
 		break
-	
+		
+
+	if len(cnts) == 0:
+		ball_end_time = time.time()
+		time_not_seen_ball = (ball_end_time - ball_start_time)
+		print(time_not_seen_ball)
+		if time_not_seen_ball > 5:
+			print("Ball not found in the last 5 seconds. Assuming end of round: end_round.jpg")
+			cv2.imwrite("end_round.jpg",image)
+			break
+
 	rawCapture.truncate(0)
  
 
