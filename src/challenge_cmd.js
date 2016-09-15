@@ -4,7 +4,7 @@ import config from '../config.json';
 
 module.exports.challenge = (event, context, cb) => {
 
-  const token = config.token;
+  const token = config.challengeToken;
   const data = event.data;
   const challenger = `<@${data.user_name}>`;
   const opponent = `<${data.text}>`;

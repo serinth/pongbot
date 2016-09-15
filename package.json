@@ -4,7 +4,7 @@
   "description": "Bot framework for Slack",
   "main": "",
   "scripts": {
-    "build": "rm -r lib; node ./node_modules/babel-cli/bin/babel.js src --out-dir lib --ignore *.spec.js && mkdir lib/node_modules && cp -r node_modules lib",
+    "build": "rm -r lib; node ./node_modules/babel-cli/bin/babel.js src --out-dir lib --ignore *.spec.js && mkdir lib/node_modules && cp -r ssl lib && cp -r node_modules lib",
     "test": "./node_modules/mocha/bin/mocha src/*.spec.js --compilers js:babel-core/register "
   },
   "repository": {
@@ -28,5 +28,12 @@
     "request-promise": "^4.1.1",
     "sinon": "^1.17.5",
     "sinon-chai": "^2.8.0"
+  },
+  "dependencies": {
+    "aws-iot-device-sdk": "^1.0.12",
+    "install": "^0.8.1",
+    "npm": "^3.10.7",
+    "request": "^2.74.0",
+    "superagent": "^2.2.0"
   }
 }

@@ -44,7 +44,14 @@ functions:
       - http:
           path: challenge
           method: POST
-
+  pb:
+    handler: lib/pb_cmd.pb
+    memorySize: 128
+    timeout: 15
+    events:
+      - http:
+          path: pb
+          method: POST
 
 #   you can add any of the following events
 #   events:
